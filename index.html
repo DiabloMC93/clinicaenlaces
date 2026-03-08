@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal de Formación Clínica</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0f172a;
+            background-image: 
+                radial-gradient(at 0% 0%, rgba(30, 64, 175, 0.15) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, rgba(15, 23, 42, 1) 0px, transparent 50%);
+            color: #f1f5f9;
+        }
+
+        .glass {
+            background: rgba(30, 41, 59, 0.5);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .card-glow {
+            transition: all 0.3s ease;
+        }
+
+        .card-glow:hover {
+            transform: translateY(-5px);
+            background: rgba(51, 65, 85, 0.6);
+            border-color: rgba(56, 189, 248, 0.4);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3), 0 8px 10px -6px rgba(0, 0, 0, 0.3);
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #38bdf8 0%, #818cf8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .shimmer {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .shimmer::after {
+            content: '';
+            position: absolute;
+            top: 0; left: -100%;
+            width: 50%; height: 100%;
+            background: linear-gradient(to right, transparent, rgba(255,255,255,0.05), transparent);
+            transform: skewX(-25deg);
+            animation: shine 3s infinite;
+        }
+
+        @keyframes shine {
+            100% { left: 150%; }
+        }
+
+        .animate-fade-in {
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-center">
+
+    <div class="container mx-auto px-4 py-12 max-w-6xl">
+        <!-- Header -->
+        <header class="text-center mb-16 animate-fade-in">
+            <div class="inline-flex items-center justify-center p-3 mb-6 rounded-2xl glass shadow-inner">
+                <i class="fas fa-stethoscope text-4xl text-sky-400"></i>
+            </div>
+            <h1 class="text-5xl font-extrabold tracking-tight mb-4">
+                Portal <span class="gradient-text">Clínica Médica</span>
+            </h1>
+            <p class="text-slate-400 text-lg max-w-2xl mx-auto">
+                Acceso centralizado a los módulos de formación, exámenes y recursos clínicos interactivos.
+            </p>
+        </header>
+
+        <!-- Links Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+            <!-- Clinica 1 -->
+            <a href="https://diablomc93.github.io/clinica1/" target="_blank" class="card-glow glass rounded-3xl p-8 shimmer flex flex-col items-center text-center">
+                <div class="w-16 h-16 rounded-2xl bg-sky-500/20 flex items-center justify-center mb-6">
+                    <i class="fas fa-microscope text-2xl text-sky-400"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-2">Clínica I</h3>
+                <p class="text-slate-400 text-sm mb-6">Fundamentos y diagnóstico básico.</p>
+                <span class="mt-auto inline-flex items-center text-sky-400 font-semibold group">
+                    Explorar <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                </span>
+            </a>
+
+            <!-- Clinica 2 -->
+            <a href="https://diablomc93.github.io/clinica2/" target="_blank" class="card-glow glass rounded-3xl p-8 shimmer flex flex-col items-center text-center">
+                <div class="w-16 h-16 rounded-2xl bg-indigo-500/20 flex items-center justify-center mb-6">
+                    <i class="fas fa-heartbeat text-2xl text-indigo-400"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-2">Clínica II</h3>
+                <p class="text-slate-400 text-sm mb-6">Sistemas corporales y patología.</p>
+                <span class="mt-auto inline-flex items-center text-indigo-400 font-semibold group">
+                    Explorar <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                </span>
+            </a>
+
+            <!-- Clinica 3 -->
+            <a href="https://diablomc93.github.io/clinica3/" target="_blank" class="card-glow glass rounded-3xl p-8 shimmer flex flex-col items-center text-center border-2 border-sky-500/30">
+                <div class="absolute -top-3 right-8 bg-sky-500 text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest shadow-lg">Más visitado</div>
+                <div class="w-16 h-16 rounded-2xl bg-emerald-500/20 flex items-center justify-center mb-6">
+                    <i class="fas fa-procedures text-2xl text-emerald-400"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-2">Clínica III</h3>
+                <p class="text-slate-400 text-sm mb-6">Cuidados críticos y shock.</p>
+                <span class="mt-auto inline-flex items-center text-emerald-400 font-semibold group">
+                    Explorar <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                </span>
+            </a>
+
+            <!-- Clinica 4 -->
+            <a href="https://diablomc93.github.io/clinica4/" target="_blank" class="card-glow glass rounded-3xl p-8 shimmer flex flex-col items-center text-center">
+                <div class="w-16 h-16 rounded-2xl bg-rose-500/20 flex items-center justify-center mb-6">
+                    <i class="fas fa-briefcase-medical text-2xl text-rose-400"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-2">Clínica IV</h3>
+                <p class="text-slate-400 text-sm mb-6">Especialidades y práctica avanzada.</p>
+                <span class="mt-auto inline-flex items-center text-rose-400 font-semibold group">
+                    Explorar <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                </span>
+            </a>
+        </div>
+
+        <!-- Footer -->
+        <footer class="mt-12 text-center text-slate-500 text-sm">
+            <p>© 2024 Portal de Recursos Clínicos • Desarrollado para Formación Médica</p>
+            <div class="mt-4 flex justify-center space-x-4 opacity-50">
+                <i class="fas fa-shield-halved" title="Acceso Seguro"></i>
+                <i class="fas fa-mobile-screen-button" title="Optimizado para Móviles"></i>
+                <i class="fas fa-bolt" title="Carga Rápida"></i>
+            </div>
+        </footer>
+    </div>
+
+</body>
+</html>
